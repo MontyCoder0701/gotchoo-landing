@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -84,6 +85,10 @@ export default function Home() {
     },
   ];
 
+  const handleSubmit = () => {
+    alert("상담 신청이 완료되었습니다.");
+  };
+
   return (
     <div className="flex flex-col items-center bg-white dark:bg-black text-black dark:text-white font-geist-sans">
       {/* 메인 섹션 */}
@@ -99,46 +104,49 @@ export default function Home() {
             </p>
             <Dialog>
               <DialogTrigger asChild>
-                <button className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition">
+                <Button className="p-6 text-base sm:text-2xl font-medium">
                   도입 상담
-                </button>
+                </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px]">
-                <DialogHeader>
-                  <DialogTitle>도입 상담</DialogTitle>
-                  <DialogDescription>
-                    친절한 상담으로 빠르게 안내 드리겠습니다.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="grid gap-4 py-4">
+                <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+                  <DialogHeader>
+                    <DialogTitle>도입 상담</DialogTitle>
+                    <DialogDescription>
+                      친절한 상담으로 빠르게 안내 드리겠습니다.
+                    </DialogDescription>
+                  </DialogHeader>
+
                   <div className="grid grid-cols-4 items-center gap-4">
                     <label htmlFor="email" className="text-right">
                       이메일
                     </label>
                     <Input
                       id="email"
+                      name="email"
                       className="col-span-3"
                       type="email"
                       required
                     />
                   </div>
+
                   <div className="grid grid-cols-4 items-center gap-4">
                     <label htmlFor="phone" className="text-right">
                       전화번호
                     </label>
                     <Input
                       id="phone"
+                      name="phone"
                       className="col-span-3"
                       type="tel"
                       required
                     />
                   </div>
-                </div>
-                <DialogFooter>
-                  <button className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition">
-                    도입 상담
-                  </button>
-                </DialogFooter>
+
+                  <DialogFooter>
+                    <Button type="submit">상담 신청</Button>
+                  </DialogFooter>
+                </form>
               </DialogContent>
             </Dialog>
           </div>
