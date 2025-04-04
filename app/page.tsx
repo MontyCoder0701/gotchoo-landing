@@ -93,9 +93,9 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-white dark:bg-black text-black dark:text-white font-geist-sans">
+    <div className="flex flex-col justify-center items-center bg-white dark:bg-black text-black dark:text-white">
       {/* 메인 섹션 */}
-      <section className="w-full min-h-screen flex justify-center items-center px-6 sm:px-10">
+      <section className="w-full min-h-screen flex justify-center items-center px-6 sm:px-10 pt-20">
         <div className="max-w-5xl w-full text-center space-y-12">
           <div className="space-y-6">
             <div className="text-3xl sm:text-4xl font-bold pt-5">LOGO</div>
