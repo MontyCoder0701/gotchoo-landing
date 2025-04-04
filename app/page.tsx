@@ -1,14 +1,13 @@
 "use client";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Image from "next/image";
-import { useState } from "react";
 
 export default function Home() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   const miniFeatures = [
     {
       title: "실시간 거래 모니터링",
@@ -181,28 +180,14 @@ export default function Home() {
           </h2>
 
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border-b border-gray-200 dark:border-gray-700 pb-4"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full text-left flex justify-between items-center text-base sm:text-lg font-medium"
-                >
-                  {faq.question}
-                  <span className="ml-2 text-xl">
-                    {openIndex === index ? "−" : "+"}
-                  </span>
-                </button>
-
-                {openIndex === index && (
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    {faq.answer}
-                  </p>
-                )}
-              </div>
-            ))}
+            <Accordion type="single" collapsible>
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
