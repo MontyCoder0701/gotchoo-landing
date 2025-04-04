@@ -9,117 +9,131 @@ export default function Home() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqs = [
+  const miniFeatures = [
     {
-      question: "What is Next.js?",
-      answer:
-        "Next.js is a React framework that enables server-side rendering and static site generation, making apps faster and more SEO-friendly.",
-    },
-    {
-      question: "Is Next.js free to use?",
-      answer: "Yes, it’s open-source and available under the MIT license.",
-    },
-    {
-      question: "How do I deploy a Next.js app?",
-      answer:
-        "You can deploy on any platform that supports Node.js. Vercel offers seamless integration and is built by the creators of Next.js.",
-    },
-  ];
-
-  const features = [
-    {
-      title: "Unlimited ad-free videos",
+      title: "실시간 거래 모니터링",
       description:
-        "Immerse in more of your favorite videos without waiting for ads. Find helpful how-to’s, try new recipes, or work out with your favorite creators — all without any interruptions.",
+        "은행, 카드사, 국세청 등 다양한 기관의 금융 거래 내역을 통합 분석하여 부정행위 가능성을 탐지합니다.",
       image: "/feature1.png",
       reverse: false,
     },
     {
-      title: "Enjoy videos offline",
+      title: "알고리즘 기반 분석 기술",
       description:
-        "Watch anytime, anywhere — download videos and watch them whenever, wherever, without the need for cell data or WiFi.",
+        "실제 사례를 기반으로 전문가들이 연구한 패턴과 머신러닝 알고리즘을 결합하여 의심 거래를 선별합니다.",
       image: "/feature2.png",
       reverse: true,
     },
     {
-      title: "Background play",
+      title: "자동 알림 시스템",
       description:
-        "Keep watching—whether the screen’s off or you’re using other apps, you can continue playing your videos in the background with zero interruptions.",
+        "의심 거래가 발생하면 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
       image: "/feature3.png",
       reverse: false,
     },
   ];
 
+  const features = [
+    {
+      title: "실시간 거래 모니터링",
+      description:
+        "은행, 카드사, 국세청 등 다양한 기관의 금융 거래 내역을 통합 분석하여 부정행위 가능성을 탐지합니다.",
+      image: "/feature1.png",
+      reverse: false,
+    },
+    {
+      title: "알고리즘 기반 분석 기술",
+      description:
+        "실제 사례를 기반으로 전문가들이 연구한 패턴과 머신러닝 알고리즘을 결합하여 의심 거래를 선별합니다.",
+      image: "/feature2.png",
+      reverse: true,
+    },
+    {
+      title: "자동 알림 시스템",
+      description:
+        "의심 거래가 발생하면 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
+      image: "/feature3.png",
+      reverse: false,
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "갖추 서비스란 무엇인가요?",
+      answer:
+        "㈜민이앤아이에서 개발 중인 GOTCHOO는 회사 공금에 대한 횡령, 배임 등 기업 내 부정행위 의심 거래를 빠르고 정확하게 탐지하는 소프트웨어입니다.",
+    },
+    {
+      question: "갖추 서비스는 어떻게 작동하나요?",
+      answer:
+        "은행, 카드사, 국세청, 4대 보험 사이트 등을 통해 회사 정보와 금융 거래 내역을 모니터링합니다.",
+    },
+    {
+      question: "갖추 서비스를 사용하면 어떤 이점이 있나요?",
+      answer:
+        "거래 내역을 직접 수집 및 분석하여 전산조작이나 문서 위조를 통한 부정행위 은폐가 어렵고, 모든 데이터는 회사 내부에 저장되어 외부 유출을 방지합니다.",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center bg-white dark:bg-black text-black dark:text-white font-geist-sans">
-      {/* Hero Section */}
+      {/* 메인 섹션 */}
       <section className="w-full min-h-screen flex justify-center items-center px-6 sm:px-10">
         <div className="max-w-5xl w-full text-center space-y-12">
           <div className="space-y-6">
             <Image
               className="mx-auto dark:invert"
               src="/next.svg"
-              alt="Next.js logo"
+              alt="탐지 시스템 로고"
               width={180}
               height={38}
               priority
             />
             <h1 className="text-3xl sm:text-4xl font-bold pt-5">
-              Build faster with Next.js
+              내가 몰랐던 우리 조직 내 횡령.
             </h1>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
-              A minimal, production-ready framework for React — with built-in
-              routing, server-side rendering, and great developer experience.
+              금융 데이터를 분석해 횡령과 배임을 실시간 탐지하는 보안 솔루션
             </p>
             <a
-              className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
-              href="https://nextjs.org/docs"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition pt-3"
+              href="#"
             >
-              Get Started
+              더 알아보기
             </a>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left mt-10 pt-10">
-            {["Blazing Fast", "Developer Friendly", "Hybrid Rendering"].map(
-              (title, i) => (
-                <div
-                  key={title}
-                  className="flex flex-col items-center sm:items-start"
-                >
-                  <Image
-                    src="/window.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="mb-2 dark:invert"
-                  />
-                  <h3 className="text-lg font-semibold mb-1">{title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {
-                      [
-                        "Optimized performance out of the box with smart bundling and SSR.",
-                        "Built-in TypeScript, ESLint, and flexible file-based routing.",
-                        "Use static generation, server rendering, or both on a per-page basis.",
-                      ][i]
-                    }
-                  </p>
-                </div>
-              )
-            )}
+            {features.map((e) => (
+              <div
+                key={e.title}
+                className="flex flex-col items-center sm:items-start"
+              >
+                <Image
+                  src="/window.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="mb-2 dark:invert"
+                />
+                <h3 className="text-lg font-semibold mb-1">{e.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {e.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* 기능 섹션 */}
       <section className="w-full px-6 sm:px-10 py-20">
         <div className="max-w-5xl mx-auto space-y-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-            Keep playing what you love—uninterrupted
+            클릭 한번으로 잡히는 횡령.
           </h2>
 
-          {features.map((feature, index) => (
+          {miniFeatures.map((feature, index) => (
             <div
               key={index}
               className={`flex flex-col sm:flex-row ${
@@ -151,11 +165,10 @@ export default function Home() {
       <section className="w-full px-6 sm:px-10 py-20">
         <div className="w-full max-w-2xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-            Ready to build something amazing?
+            내가 몰랐던 우리 조직 내 횡령.
           </h2>
           <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
-            Jumpstart your next project with Next.js and experience the power of
-            full-stack flexibility.
+            매달 49,000원으로, 자금 사고를 막아보세요.
           </p>
           <a
             href="https://vercel.com/new"
@@ -163,7 +176,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
           >
-            Deploy Now
+            더 알아보기
           </a>
         </div>
       </section>
@@ -172,7 +185,7 @@ export default function Home() {
       <section className="w-full px-6 sm:px-10 py-20">
         <div className="max-w-3xl mx-auto text-left">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">
-            FAQ
+            자주 묻는 질문
           </h2>
 
           <div className="space-y-4">
