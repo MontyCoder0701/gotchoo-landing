@@ -90,7 +90,9 @@ export default function Home() {
             </p>
             <a
               className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition pt-3"
-              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://gotchoo.net"
             >
               더 알아보기
             </a>
@@ -161,7 +163,7 @@ export default function Home() {
             매달 49,000원으로, 자금 사고를 막아보세요.
           </p>
           <a
-            href="https://vercel.com/new"
+            href="https://gotchoo.net"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
