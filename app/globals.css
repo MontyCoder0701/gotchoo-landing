@@ -43,15 +43,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-h1,
-h2,
-h3,
-p,
-div {
-  @apply break-keep;
-  @apply text-pretty;
-}
-
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -128,4 +119,13 @@ div {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+h1,
+h2,
+h3,
+p,
+div {
+  @apply break-keep;
+  @apply text-pretty;
 }

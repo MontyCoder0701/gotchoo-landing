@@ -93,7 +93,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
             >
-              도입 문의
+              도입 상담
             </a>
           </div>
 
@@ -167,7 +167,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
           >
-            도입 문의
+            도입 상담
           </a>
         </div>
       </section>
