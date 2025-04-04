@@ -108,7 +108,7 @@ export default function Home() {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button className="p-6 text-base sm:text-2xl font-medium">
+                <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
                   도입 상담
                 </Button>
               </DialogTrigger>
@@ -224,7 +224,7 @@ export default function Home() {
 
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="p-6 text-base sm:text-2xl font-medium">
+              <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
                 도입 상담
               </Button>
             </DialogTrigger>
