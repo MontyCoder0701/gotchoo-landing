@@ -14,21 +14,21 @@ export default function Home() {
       title: "실시간 거래 모니터링",
       description:
         "은행, 카드사, 국세청 등 다양한 기관의 금융 거래 내역을 통합 분석하여 부정행위 가능성을 탐지합니다.",
-      image: "/feature1.png",
+      image: "https://placehold.co/24/png",
       reverse: false,
     },
     {
       title: "알고리즘 기반 분석 기술",
       description:
         "실제 사례를 기반으로 전문가들이 연구한 패턴과 머신러닝 알고리즘을 결합하여 의심 거래를 선별합니다.",
-      image: "/feature2.png",
+      image: "https://placehold.co/24/png",
       reverse: true,
     },
     {
       title: "자동 알림 시스템",
       description:
         "의심 거래가 발생하면 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
-      image: "/feature3.png",
+      image: "https://placehold.co/24/png",
       reverse: false,
     },
   ];
@@ -38,21 +38,21 @@ export default function Home() {
       title: "실시간 거래 모니터링",
       description:
         "은행, 카드사, 국세청 등 다양한 기관의 금융 거래 내역을 통합 분석하여 부정행위 가능성을 탐지합니다.",
-      image: "/feature1.png",
+      image: "https://placehold.co/500/png",
       reverse: false,
     },
     {
       title: "알고리즘 기반 분석 기술",
       description:
         "실제 사례를 기반으로 전문가들이 연구한 패턴과 머신러닝 알고리즘을 결합하여 의심 거래를 선별합니다.",
-      image: "/feature2.png",
+      image: "https://placehold.co/500/png",
       reverse: true,
     },
     {
       title: "자동 알림 시스템",
       description:
         "의심 거래가 발생하면 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
-      image: "/feature3.png",
+      image: "https://placehold.co/500/png",
       reverse: false,
     },
   ];
@@ -81,14 +81,7 @@ export default function Home() {
       <section className="w-full min-h-screen flex justify-center items-center px-6 sm:px-10">
         <div className="max-w-5xl w-full text-center space-y-12">
           <div className="space-y-6">
-            <Image
-              className="mx-auto dark:invert"
-              src="/next.svg"
-              alt="탐지 시스템 로고"
-              width={180}
-              height={38}
-              priority
-            />
+            <div className="text-3xl sm:text-4xl font-bold pt-5">LOGO</div>
             <h1 className="text-3xl sm:text-4xl font-bold pt-5">
               내가 몰랐던 우리 조직 내 횡령.
             </h1>
@@ -103,14 +96,11 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left mt-10 pt-10">
-            {features.map((e) => (
-              <div
-                key={e.title}
-                className="flex flex-col items-center sm:items-start"
-              >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 pt-10 text-center">
+            {miniFeatures.map((e) => (
+              <div key={e.title} className="flex flex-col items-center gap-2">
                 <Image
-                  src="/window.svg"
+                  src={e.image}
                   alt=""
                   width={24}
                   height={24}
@@ -133,7 +123,7 @@ export default function Home() {
             클릭 한번으로 잡히는 횡령.
           </h2>
 
-          {miniFeatures.map((feature, index) => (
+          {features.map((feature, index) => (
             <div
               key={index}
               className={`flex flex-col sm:flex-row ${
@@ -149,7 +139,7 @@ export default function Home() {
 
               <div className="sm:w-1/2 flex justify-center">
                 <Image
-                  src="/window.svg"
+                  src={feature.image}
                   alt={feature.title}
                   width={300}
                   height={300}
