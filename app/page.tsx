@@ -102,6 +102,7 @@ export default function Home() {
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
               금융 데이터를 분석해 횡령과 배임을 실시간 탐지하는 보안 솔루션
             </p>
+
             <Dialog>
               <DialogTrigger asChild>
                 <Button className="p-6 text-base sm:text-2xl font-medium">
@@ -215,14 +216,54 @@ export default function Home() {
           <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
             매달 49,000원으로, 자금 사고를 막아보세요.
           </p>
-          <a
-            href="https://gotchoo.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
-          >
-            도입 상담
-          </a>
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="p-6 text-base sm:text-2xl font-medium">
+                도입 상담
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+                <DialogHeader>
+                  <DialogTitle>도입 상담</DialogTitle>
+                  <DialogDescription>
+                    친절한 상담으로 빠르게 안내 드리겠습니다.
+                  </DialogDescription>
+                </DialogHeader>
+
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <label htmlFor="email" className="text-right">
+                    이메일
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    className="col-span-3"
+                    type="email"
+                    required
+                  />
+                </div>
+
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <label htmlFor="phone" className="text-right">
+                    전화번호
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    className="col-span-3"
+                    type="tel"
+                    required
+                  />
+                </div>
+
+                <DialogFooter>
+                  <Button type="submit">상담 신청</Button>
+                </DialogFooter>
+              </form>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
