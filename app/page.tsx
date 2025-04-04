@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -17,6 +18,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import { toast } from "sonner";
 
 export default function Home() {
   const miniFeatures = [
@@ -85,8 +87,9 @@ export default function Home() {
     },
   ];
 
-  const handleSubmit = () => {
-    alert("상담 신청이 완료되었습니다.");
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast("상담 신청이 완료되었습니다.");
   };
 
   return (
@@ -145,7 +148,9 @@ export default function Home() {
                   </div>
 
                   <DialogFooter>
-                    <Button type="submit">상담 신청</Button>
+                    <DialogClose asChild>
+                      <Button type="submit">상담 신청</Button>
+                    </DialogClose>
                   </DialogFooter>
                 </form>
               </DialogContent>
@@ -258,9 +263,9 @@ export default function Home() {
                   />
                 </div>
 
-                <DialogFooter>
+                <DialogClose asChild>
                   <Button type="submit">상담 신청</Button>
-                </DialogFooter>
+                </DialogClose>
               </form>
             </DialogContent>
           </Dialog>
