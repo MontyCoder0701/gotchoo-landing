@@ -88,12 +88,12 @@ export default function Home() {
               금융 데이터를 분석해 횡령과 배임을 실시간 탐지하는 보안 솔루션
             </p>
             <a
-              className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition pt-3"
+              href="https://gotchoo.net"
               target="_blank"
               rel="noopener noreferrer"
-              href="https://gotchoo.net"
+              className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
             >
-              더 알아보기
+              도입 문의
             </a>
           </div>
 
@@ -154,7 +154,7 @@ export default function Home() {
 
       {/* Call to Action */}
       <section className="w-full px-6 sm:px-10 py-20">
-        <div className="w-full max-w-2xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
+        <div className="w-full max-w-3xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
             내가 몰랐던 우리 조직 내 횡령.
           </h2>
@@ -167,7 +167,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
           >
-            더 알아보기
+            도입 문의
           </a>
         </div>
       </section>
@@ -188,6 +188,18 @@ export default function Home() {
                 </AccordionItem>
               ))}
             </Accordion>
+            <div>
+              더 궁금하신 점은{" "}
+              <a
+                className="text-blue-600 font-semibold"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.gotchoo.net/client/06_data.htm?smenu=sub4&stitle=subtitle4_6"
+              >
+                홈페이지 FAQ
+              </a>
+              를 확인해주세요.
+            </div>
           </div>
         </div>
       </section>
