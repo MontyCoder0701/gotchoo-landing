@@ -5,6 +5,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
 
 export default function Home() {
@@ -87,14 +97,50 @@ export default function Home() {
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
               금융 데이터를 분석해 횡령과 배임을 실시간 탐지하는 보안 솔루션
             </p>
-            <a
-              href="https://gotchoo.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition"
-            >
-              도입 상담
-            </a>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition">
+                  도입 상담
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>도입 상담</DialogTitle>
+                  <DialogDescription>
+                    친절한 상담으로 빠르게 안내 드리겠습니다.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <label htmlFor="email" className="text-right">
+                      이메일
+                    </label>
+                    <Input
+                      id="email"
+                      className="col-span-3"
+                      type="email"
+                      required
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <label htmlFor="phone" className="text-right">
+                      전화번호
+                    </label>
+                    <Input
+                      id="phone"
+                      className="col-span-3"
+                      type="tel"
+                      required
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <button className="inline-block bg-black dark:bg-white text-white dark:text-black rounded-full px-8 py-4 text-base sm:text-lg font-medium hover:opacity-80 transition">
+                    도입 상담
+                  </button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 pt-10 text-center">
