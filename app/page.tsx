@@ -17,7 +17,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
@@ -79,16 +79,17 @@ export default function Home() {
     {
       question: "GotChoo가 데이터를 수집하기 위해 활용하는 기술은 무엇인지, 법적 문제는 없는지 궁금합니다.",
       answer:
-        "GotChoo는 기업의 공동인증서를 이용, 은행·카드·국세청·4대보험 사이트에 있는 기업 거래 Data를 Scraping 방식으로 수집하고 있습니다. 이를 위해 저희 민이앤아이는 신뢰성 있는 Data Scraping 기술을 보유한 알디스데이터와 제휴하여 GotChoo갖추를 개발하였습니다. 아울러 Data Scraping은 여러 시중은행의 인터넷뱅킹에서도 활용하고 있을 정도로, 법적·기술적으로 검증된 기술입니다. ",
+        "GotChoo는 기업의 공동인증서를 이용, 은행·카드·국세청·4대보험 사이트에 있는 기업 거래 Data를 Scraping 방식으로 수집하고 있습니다. 이를 위해 저희 민이앤아이는 신뢰성 있는 Data Scraping 기술을 보유한 알디스데이터와 제휴하여 GotChoo갖추를 개발하였습니다. 아울러 Data Scraping은 여러 시중은행의 인터넷뱅킹에서도 활용하고 있을 정도로, 법적·기술적으로 검증된 기술입니다.",
     },
     {
       question: "기업에서 사용하는 ERP나 자금관리프로그램에도 횡령을 예방하는 기능이 있지 않나요?",
-      answer: "일부 ERP나 자금관리 프로그램의 경우, 사용자별 권한을 분리하여 지출을 통제하거나 회계상 문제가 발생하면 경고하는 방식으로 횡령을 예방한다고 주장합니다. 그러나 이러한 방식은 감사시스템과 마찬가지로 CEO나 오너의 직접 확인이 어렵고, 조작이나 은폐에 취약하며, 다양한 방식의 횡령에 대처하거나 탐지하기 어렵다는 한계가 있습니다. 무엇보다 GotChoo는 작은 규모의 기업이나 비영리기관·단체·사업체에서도 사용할 수 있는, 범용성과 확장성이 뛰어난 프로그램입니다.",
+      answer:
+        "일부 ERP나 자금관리 프로그램의 경우, 사용자별 권한을 분리하여 지출을 통제하거나 회계상 문제가 발생하면 경고하는 방식으로 횡령을 예방한다고 주장합니다. 그러나 이러한 방식은 감사시스템과 마찬가지로 CEO나 오너의 직접 확인이 어렵고, 조작이나 은폐에 취약하며, 다양한 방식의 횡령에 대처하거나 탐지하기 어렵다는 한계가 있습니다. 무엇보다 GotChoo는 작은 규모의 기업이나 비영리기관·단체·사업체에서도 사용할 수 있는, 범용성과 확장성이 뛰어난 프로그램입니다.",
     },
     {
       question: "GotChoo를 이용하려면 어떻게 해야 하나요?",
       answer:
-        "홈페이지에서 회원가입 및 설치플랜을 선택하신 후 GotChoo 설치파일을 다운로드 받아 실행시키면 PC에 설치할 수 있습니다. 설치 후 바탕화면에 생긴 GotChoo 아이콘을 클릭하시면 프로그램이 실행됩니다. 실행후 안내에 따라 기업/기관위치, 급여일, 은행계좌, 신용카드, 홈택스, 4대사회보험, 직원정보를 등록하고, 알람/리포트 수신정보와 탐지주기를 설정하면 미리 설정된 주기에 따라 자동으로 거래내역을 수집 분석하여 횡령 등 부정행위 의심거래를 탐지하여 드립니다. 최초 사용자 등록후 3개월동안 무료로 이용하실 수 있습니다. ",
+        "홈페이지에서 회원가입 및 설치플랜을 선택하신 후 GotChoo 설치파일을 다운로드 받아 실행시키면 PC에 설치할 수 있습니다. 설치 후 바탕화면에 생긴 GotChoo 아이콘을 클릭하시면 프로그램이 실행됩니다. 실행후 안내에 따라 기업/기관위치, 급여일, 은행계좌, 신용카드, 홈택스, 4대사회보험, 직원정보를 등록하고, 알람/리포트 수신정보와 탐지주기를 설정하면 미리 설정된 주기에 따라 자동으로 거래내역을 수집 분석하여 횡령 등 부정행위 의심거래를 탐지하여 드립니다. 최초 사용자 등록후 3개월동안 무료로 이용하실 수 있습니다.",
     },
   ];
 
@@ -106,11 +107,28 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center bg-white dark:bg-black text-black dark:text-white">
-      {/* 메인 섹션 */}
-      <section className="w-full min-h-screen flex justify-center items-center px-6 sm:px-10 pt-20">
+      {/* Sticky Top Navigation */}
+      <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
+          <div className="text-lg font-bold">LOGO</div>
+          <nav className="space-x-4 hidden sm:block">
+            <a href="#features" className="hover:underline">
+              기능
+            </a>
+            <a href="#faq" className="hover:underline">
+              FAQ
+            </a>
+            <a href="#consult" className="hover:underline">
+              상담 신청
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="w-full min-h-screen flex justify-center items-center px-6 sm:px-10 pt-20 sm:pt-0">
         <div className="max-w-5xl w-full text-center space-y-12">
           <div className="space-y-6">
-            <div className="text-3xl sm:text-4xl font-bold pt-5">LOGO</div>
             <h1 className="text-3xl sm:text-4xl font-bold pt-5">
               우리 회사 자금, <br />
               지금도 새고 있을지 모릅니다.
@@ -139,26 +157,14 @@ export default function Home() {
                     <label htmlFor="email" className="text-right">
                       이메일
                     </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      className="col-span-3"
-                      type="email"
-                      required
-                    />
+                    <Input id="email" name="email" className="col-span-3" type="email" required />
                   </div>
 
                   <div className="grid grid-cols-4 items-center gap-4">
                     <label htmlFor="phone" className="text-right">
                       전화번호
                     </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      className="col-span-3"
-                      type="tel"
-                      required
-                    />
+                    <Input id="phone" name="phone" className="col-span-3" type="tel" required />
                   </div>
 
                   <DialogFooter>
@@ -172,25 +178,17 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 pt-10 text-center">
             {miniFeatures.map((e) => (
               <div key={e.title} className="flex flex-col items-center gap-2">
-                <Image
-                  src={e.image}
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="mb-2 dark:invert"
-                />
+                <Image src={e.image} alt="" width={24} height={24} className="mb-2 dark:invert" />
                 <h3 className="text-lg font-semibold mb-1">{e.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {e.description}
-                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{e.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
-      {/* 기능 섹션 */}
-      <section className="w-full px-6 sm:px-10 py-20">
+      {/* Features Section */}
+      < section id="features" className="w-full px-6 sm:px-10 py-20" >
         <div className="max-w-5xl mx-auto space-y-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
             클릭 한 번이면, 자금 리스크 끝.
@@ -199,14 +197,11 @@ export default function Home() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col sm:flex-row ${feature.reverse ? "sm:flex-row-reverse" : ""
-                } items-center gap-10`}
+              className={`flex flex-col sm:flex-row ${feature.reverse ? "sm:flex-row-reverse" : ""} items-center gap-10`}
             >
               <div className="sm:w-1/2 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {feature.description}
-                </p>
+                <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
               </div>
 
               <div className="sm:w-1/2 flex justify-center">
@@ -221,10 +216,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section >
 
-      {/* Call to Action */}
-      <section className="w-full px-6 sm:px-10 py-20">
+      {/* Call to Action Section */}
+      < section id="consult" className="w-full px-6 sm:px-10 py-20" >
         <div className="w-full max-w-3xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
             우리 회사 자금, 지금도 새고 있을지 모릅니다.
@@ -253,26 +248,14 @@ export default function Home() {
                   <label htmlFor="email" className="text-right">
                     이메일
                   </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    className="col-span-3"
-                    type="email"
-                    required
-                  />
+                  <Input id="email" name="email" className="col-span-3" type="email" required />
                 </div>
 
                 <div className="grid grid-cols-4 items-center gap-4">
                   <label htmlFor="phone" className="text-right">
                     전화번호
                   </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    className="col-span-3"
-                    type="tel"
-                    required
-                  />
+                  <Input id="phone" name="phone" className="col-span-3" type="tel" required />
                 </div>
 
                 <DialogFooter>
@@ -282,14 +265,12 @@ export default function Home() {
             </DialogContent>
           </Dialog>
         </div>
-      </section>
+      </section >
 
       {/* FAQ Section */}
-      <section className="w-full px-6 sm:px-10 py-20">
+      < section id="faq" className="w-full px-6 sm:px-10 py-20" >
         <div className="max-w-3xl mx-auto text-left">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">
-            자주 묻는 질문
-          </h2>
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center">자주 묻는 질문</h2>
 
           <div className="space-y-4">
             <Accordion type="single" collapsible>
@@ -314,7 +295,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
