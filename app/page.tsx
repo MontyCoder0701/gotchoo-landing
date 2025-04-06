@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
+import Link from "next/link";
 import { toast } from "sonner";
 
 export default function Home() {
@@ -110,14 +111,21 @@ export default function Home() {
       {/* Sticky Top Navigation */}
       <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-5xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
-          <div className="text-lg font-bold">LOGO</div>
+          <Link
+            href={"https://www.gotchoo.net/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/logo.png"
+              alt="로고"
+              width={143}
+              height={32}
+            />
+          </Link>
+
+
           <nav className="space-x-4 hidden sm:block">
-            <a href="#features" className="hover:underline">
-              기능
-            </a>
-            <a href="#faq" className="hover:underline">
-              FAQ
-            </a>
             <a href="#consult" className="hover:underline">
               상담 신청
             </a>
@@ -147,7 +155,7 @@ export default function Home() {
               <DialogContent className="sm:max-w-[425px]">
                 <form onSubmit={handleSubmitFirstCta} className="grid gap-4 py-4">
                   <DialogHeader>
-                    <DialogTitle>도입 상담</DialogTitle>
+                    <DialogTitle>무료 상담 신청</DialogTitle>
                     <DialogDescription>
                       친절한 상담으로 빠르게 안내 드리겠습니다.
                     </DialogDescription>
@@ -238,7 +246,7 @@ export default function Home() {
             <DialogContent className="sm:max-w-[425px]">
               <form onSubmit={handleSubmitSecondCta} className="grid gap-4 py-4">
                 <DialogHeader>
-                  <DialogTitle>도입 상담</DialogTitle>
+                  <DialogTitle>무료 상담 신청</DialogTitle>
                   <DialogDescription>
                     친절한 상담으로 빠르게 안내 드리겠습니다.
                   </DialogDescription>
@@ -285,9 +293,9 @@ export default function Home() {
               더 궁금하신 점은{" "}
               <a
                 className="text-blue-600 font-semibold"
+                href="https://www.gotchoo.net/client/06_data.htm?smenu=sub4&stitle=subtitle4_6"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.gotchoo.net/client/06_data.htm?smenu=sub4&stitle=subtitle4_6"
               >
                 홈페이지 FAQ
               </a>
