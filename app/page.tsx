@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 import {
   Accordion,
@@ -11,19 +12,21 @@ import {
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
 import { toast } from "sonner";
 
 export default function Home() {
+  const [firstCtaOpen, setFirstCtaOpen] = useState(false);
+  const [secondCtaOpen, setSecondCtaOpen] = useState(false);
+
   const miniFeatures = [
     {
       title: "실시간 거래 모니터링",
@@ -90,8 +93,15 @@ export default function Home() {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmitFirstCta = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setFirstCtaOpen(false);
+    toast("상담 신청이 완료되었습니다.");
+  };
+
+  const handleSubmitSecondCta = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSecondCtaOpen(false);
     toast("상담 신청이 완료되었습니다.");
   };
 
@@ -109,14 +119,15 @@ export default function Home() {
               금융 데이터를 분석해 횡령과 배임을 실시간 탐지하는 보안 솔루션
             </p>
 
-            <Dialog>
+            <Dialog open={firstCtaOpen} onOpenChange={setFirstCtaOpen}>
               <DialogTrigger asChild>
                 <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
                   도입 상담
                 </Button>
               </DialogTrigger>
+
               <DialogContent className="sm:max-w-[425px]">
-                <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+                <form onSubmit={handleSubmitFirstCta} className="grid gap-4 py-4">
                   <DialogHeader>
                     <DialogTitle>도입 상담</DialogTitle>
                     <DialogDescription>
@@ -151,9 +162,7 @@ export default function Home() {
                   </div>
 
                   <DialogFooter>
-                    <DialogClose asChild>
-                      <Button type="submit">상담 신청</Button>
-                    </DialogClose>
+                    <Button type="submit">상담 신청</Button>
                   </DialogFooter>
                 </form>
               </DialogContent>
@@ -224,14 +233,15 @@ export default function Home() {
             매달 49,000원으로, 자금 사고를 막아보세요.
           </p>
 
-          <Dialog>
+          <Dialog open={secondCtaOpen} onOpenChange={setSecondCtaOpen}>
             <DialogTrigger asChild>
               <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
                 도입 상담
               </Button>
             </DialogTrigger>
+
             <DialogContent className="sm:max-w-[425px]">
-              <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+              <form onSubmit={handleSubmitSecondCta} className="grid gap-4 py-4">
                 <DialogHeader>
                   <DialogTitle>도입 상담</DialogTitle>
                   <DialogDescription>
@@ -265,9 +275,9 @@ export default function Home() {
                   />
                 </div>
 
-                <DialogClose asChild>
+                <DialogFooter>
                   <Button type="submit">상담 신청</Button>
-                </DialogClose>
+                </DialogFooter>
               </form>
             </DialogContent>
           </Dialog>
