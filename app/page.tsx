@@ -161,15 +161,8 @@ export default function Home() {
                     </DialogDescription>
                   </DialogHeader>
 
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <label htmlFor="email" className="text-right">
-                      이메일
-                    </label>
-                    <Input id="email" name="email" className="col-span-3" type="email" required />
-                  </div>
-
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <label htmlFor="phone" className="text-right">
+                  <div className="grid grid-cols-4 gap-4">
+                    <label htmlFor="phone">
                       전화번호
                     </label>
                     <Input id="phone" name="phone" className="col-span-3" type="tel" required />
@@ -253,14 +246,7 @@ export default function Home() {
                 </DialogHeader>
 
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <label htmlFor="email" className="text-right">
-                    이메일
-                  </label>
-                  <Input id="email" name="email" className="col-span-3" type="email" required />
-                </div>
-
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <label htmlFor="phone" className="text-right">
+                  <label htmlFor="phone">
                     전화번호
                   </label>
                   <Input id="phone" name="phone" className="col-span-3" type="tel" required />
