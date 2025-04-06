@@ -29,23 +29,23 @@ export default function Home() {
 
   const miniFeatures = [
     {
-      title: "실시간 거래 모니터링",
+      title: "모든 거래를 한눈에, 실시간 감시",
       description:
-        "은행, 카드사, 국세청 등 다양한 기관의 금융 거래 내역을 통합 분석하여 부정행위 가능성을 탐지합니다.",
+        "여러 기관의 데이터를 통합 분석해 사각지대 없는 실시간 감시를 제공합니다.",
       image: "https://placehold.co/24/png",
       reverse: false,
     },
     {
-      title: "알고리즘 기반 분석 기술",
+      title: "전문가 지식과 알고리즘의 강력한 콜라보",
       description:
-        "실제 사례를 기반으로 전문가들이 연구한 패턴과 머신러닝 알고리즘을 결합하여 의심 거래를 선별합니다.",
+        "실제 사례를 기반으로 전문가들이 연구한 패턴과 알고리즘을 결합하여 의심 거래를 선별합니다.",
       image: "https://placehold.co/24/png",
       reverse: true,
     },
     {
-      title: "자동 알림 시스템",
+      title: "의심 거래, 바로 알림",
       description:
-        "의심 거래가 발생하면 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
+        "의심 거래가 발생하면 실시간 알림으로 빠르게 대응할 수 있습니다.",
       image: "https://placehold.co/24/png",
       reverse: false,
     },
@@ -53,23 +53,23 @@ export default function Home() {
 
   const features = [
     {
-      title: "실시간 거래 모니터링",
+      title: "모든 거래를 한눈에, 실시간 감시",
       description:
         "은행, 카드사, 국세청 등 다양한 기관의 금융 거래 내역을 통합 분석하여 부정행위 가능성을 탐지합니다.",
       image: "https://placehold.co/500/png",
       reverse: false,
     },
     {
-      title: "알고리즘 기반 분석 기술",
+      title: "전문가 지식과 알고리즘의 강력한 콜라보",
       description:
-        "실제 사례를 기반으로 전문가들이 연구한 패턴과 머신러닝 알고리즘을 결합하여 의심 거래를 선별합니다.",
+        "실제 사례를 기반으로 전문가들이 연구한 패턴과 알고리즘을 결합하여 의심 거래를 선별합니다.",
       image: "https://placehold.co/500/png",
       reverse: true,
     },
     {
-      title: "자동 알림 시스템",
+      title: "의심 거래, 바로 알림",
       description:
-        "의심 거래가 발생하면 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
+        "의심 거래가 발생하면 실시간 알림으로 빠르게 대응할 수 있습니다. 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
       image: "https://placehold.co/500/png",
       reverse: false,
     },
@@ -77,19 +77,18 @@ export default function Home() {
 
   const faqs = [
     {
-      question: "갖추 서비스란 무엇인가요?",
+      question: "GotChoo가 데이터를 수집하기 위해 활용하는 기술은 무엇인지, 법적 문제는 없는지 궁금합니다.",
       answer:
-        "㈜민이앤아이에서 개발 중인 GOTCHOO는 회사 공금에 대한 횡령, 배임 등 기업 내 부정행위 의심 거래를 빠르고 정확하게 탐지하는 소프트웨어입니다.",
+        "GotChoo는 기업의 공동인증서를 이용, 은행·카드·국세청·4대보험 사이트에 있는 기업 거래 Data를 Scraping 방식으로 수집하고 있습니다. 이를 위해 저희 민이앤아이는 신뢰성 있는 Data Scraping 기술을 보유한 알디스데이터와 제휴하여 GotChoo갖추를 개발하였습니다. 아울러 Data Scraping은 여러 시중은행의 인터넷뱅킹에서도 활용하고 있을 정도로, 법적·기술적으로 검증된 기술입니다. ",
     },
     {
-      question: "갖추 서비스는 어떻게 작동하나요?",
-      answer:
-        "은행, 카드사, 국세청, 4대 보험 사이트 등을 통해 회사 정보와 금융 거래 내역을 모니터링합니다.",
+      question: "기업에서 사용하는 ERP나 자금관리프로그램에도 횡령을 예방하는 기능이 있지 않나요?",
+      answer: "일부 ERP나 자금관리 프로그램의 경우, 사용자별 권한을 분리하여 지출을 통제하거나 회계상 문제가 발생하면 경고하는 방식으로 횡령을 예방한다고 주장합니다. 그러나 이러한 방식은 감사시스템과 마찬가지로 CEO나 오너의 직접 확인이 어렵고, 조작이나 은폐에 취약하며, 다양한 방식의 횡령에 대처하거나 탐지하기 어렵다는 한계가 있습니다. 무엇보다 GotChoo는 작은 규모의 기업이나 비영리기관·단체·사업체에서도 사용할 수 있는, 범용성과 확장성이 뛰어난 프로그램입니다.",
     },
     {
-      question: "갖추 서비스를 사용하면 어떤 이점이 있나요?",
+      question: "GotChoo를 이용하려면 어떻게 해야 하나요?",
       answer:
-        "거래 내역을 직접 수집 및 분석하여 전산조작이나 문서 위조를 통한 부정행위 은폐가 어렵고, 모든 데이터는 회사 내부에 저장되어 외부 유출을 방지합니다.",
+        "홈페이지에서 회원가입 및 설치플랜을 선택하신 후 GotChoo 설치파일을 다운로드 받아 실행시키면 PC에 설치할 수 있습니다. 설치 후 바탕화면에 생긴 GotChoo 아이콘을 클릭하시면 프로그램이 실행됩니다. 실행후 안내에 따라 기업/기관위치, 급여일, 은행계좌, 신용카드, 홈택스, 4대사회보험, 직원정보를 등록하고, 알람/리포트 수신정보와 탐지주기를 설정하면 미리 설정된 주기에 따라 자동으로 거래내역을 수집 분석하여 횡령 등 부정행위 의심거래를 탐지하여 드립니다. 최초 사용자 등록후 3개월동안 무료로 이용하실 수 있습니다. ",
     },
   ];
 
@@ -113,16 +112,17 @@ export default function Home() {
           <div className="space-y-6">
             <div className="text-3xl sm:text-4xl font-bold pt-5">LOGO</div>
             <h1 className="text-3xl sm:text-4xl font-bold pt-5">
-              내가 몰랐던 우리 조직 내 횡령.
+              우리 회사 자금, <br />
+              지금도 새고 있을지 모릅니다.
             </h1>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
-              금융 데이터를 분석해 횡령과 배임을 실시간 탐지하는 보안 솔루션
+              금융 데이터 분석으로 한눈에 횡령을 잡아내는 리스크 탐지 솔루션
             </p>
 
             <Dialog open={firstCtaOpen} onOpenChange={setFirstCtaOpen}>
               <DialogTrigger asChild>
                 <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
-                  도입 상담
+                  무료 상담 신청
                 </Button>
               </DialogTrigger>
 
@@ -193,7 +193,7 @@ export default function Home() {
       <section className="w-full px-6 sm:px-10 py-20">
         <div className="max-w-5xl mx-auto space-y-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-            클릭 한번으로 잡히는 횡령.
+            클릭 한 번이면, 자금 리스크 끝.
           </h2>
 
           {features.map((feature, index) => (
@@ -227,16 +227,16 @@ export default function Home() {
       <section className="w-full px-6 sm:px-10 py-20">
         <div className="w-full max-w-3xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-            내가 몰랐던 우리 조직 내 횡령.
+            우리 회사 자금, 지금도 새고 있을지 모릅니다.
           </h2>
           <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
-            매달 49,000원으로, 자금 사고를 막아보세요.
+            월 49,000원으로 수천만 원의 손실을 미리 막을 수 있습니다.
           </p>
 
           <Dialog open={secondCtaOpen} onOpenChange={setSecondCtaOpen}>
             <DialogTrigger asChild>
               <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
-                도입 상담
+                무료 상담 신청
               </Button>
             </DialogTrigger>
 

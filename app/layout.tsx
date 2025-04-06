@@ -11,7 +11,7 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "갖추 - 횡령 안심",
+  title: "갖추 GotChoo | 클릭 한 번으로 잡아내는 조직 내 횡령",
   applicationName: "갖추",
   description: "갖추 랜딩페이지",
 };
