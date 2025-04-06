@@ -1,4 +1,7 @@
 "use client";
+
+import Image from "next/image";
+
 import {
   Accordion,
   AccordionContent,
@@ -17,7 +20,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
+
 import { toast } from "sonner";
 
 export default function Home() {
@@ -187,9 +190,8 @@ export default function Home() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col sm:flex-row ${
-                feature.reverse ? "sm:flex-row-reverse" : ""
-              } items-center gap-10`}
+              className={`flex flex-col sm:flex-row ${feature.reverse ? "sm:flex-row-reverse" : ""
+                } items-center gap-10`}
             >
               <div className="sm:w-1/2 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
