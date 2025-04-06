@@ -142,7 +142,7 @@ export default function Home() {
               지금도 새고 있을지 모릅니다.
             </h1>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
-              금융 데이터 분석으로 한눈에 횡령을 잡아내는 리스크 탐지 솔루션
+              금융 데이터 분석으로 한눈에 횡령을 잡아내는 똑똑한 솔루션
             </p>
 
             <Dialog open={firstCtaOpen} onOpenChange={setFirstCtaOpen}>
