@@ -97,14 +97,14 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
             <div className="col-span-3 flex items-center gap-2">
               <Checkbox id="1" />
               <label htmlFor="1" className="text-sm text-muted-foreground">
-                GotChoo 도입이 정말 효과적일지 알고 싶어요.
+                어떻게 횡령을 잡는지, 데모를 무료로 보고 싶어요.
               </label>
             </div>
 
             <div className="col-span-3 flex items-center gap-2">
               <Checkbox id="2" />
               <label htmlFor="2" className="text-sm text-muted-foreground">
-                우리 기업에 GotChoo 도입이 적합할지 알고 싶어요.
+                도입 비용 견적을 알아보고 싶어요.
               </label>
             </div>
 
