@@ -213,7 +213,16 @@ export default function Home() {
             우리 회사 자금, 지금도 새고 있을지 모릅니다.
           </h2>
           <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
-            월 49,000원으로 수천만 원의 손실을 미리 막을 수 있습니다.
+            월{" "}
+            <a
+              className="text-blue-600 font-semibold"
+              href="https://www.gotchoo.net/guide/03_fare_n.htm?smenu=sub2&stitle=subtitle2_3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              49,000원
+            </a>
+            으로 수천만 원의 손실을 미리 막을 수 있습니다.
           </p>
 
           <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
