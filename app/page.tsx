@@ -37,14 +37,14 @@ export default function Home() {
       reverse: false,
     },
     {
-      title: "전문가 지식과 알고리즘의 강력한 콜라보",
+      title: "의심 거래를 골라내는 강력한 알고리즘",
       description:
         "실제 사례를 기반으로 전문가들이 연구한 패턴과 알고리즘을 결합하여 의심 거래를 선별합니다.",
       image: "https://placehold.co/24/png",
       reverse: true,
     },
     {
-      title: "의심 거래, 바로 알림",
+      title: "언제 어디서나, 바로 알림",
       description:
         "의심 거래가 발생하면 실시간 알림으로 빠르게 대응할 수 있습니다.",
       image: "https://placehold.co/24/png",
@@ -61,14 +61,14 @@ export default function Home() {
       reverse: false,
     },
     {
-      title: "전문가 지식과 알고리즘의 강력한 콜라보",
+      title: "의심 거래를 골라내는 강력한 알고리즘",
       description:
         "실제 사례를 기반으로 전문가들이 연구한 패턴과 알고리즘을 결합하여 의심 거래를 선별합니다.",
       image: "https://placehold.co/500/png",
       reverse: true,
     },
     {
-      title: "의심 거래, 바로 알림",
+      title: "언제 어디서나, 바로 알림",
       description:
         "의심 거래가 발생하면 실시간 알림으로 빠르게 대응할 수 있습니다. 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
       image: "https://placehold.co/500/png",
