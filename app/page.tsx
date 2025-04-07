@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { CeoFriend, CeoPage } from "./_pages";
+import CeoPage from "./_pages/CeoPage";
 
 export default function HomePage() {
   const [view, setView] = useState<string | null>(null);
@@ -11,12 +11,9 @@ export default function HomePage() {
     setView(localStorage.getItem("view"));
   }, []);
 
-  switch (view) {
-    case "ceo":
-      return <CeoPage />;
-    case "ceo-friend":
-      return <CeoFriend />;
-    default:
-      return <CeoPage />;
+  if (view === "ceo") {
+    return <CeoPage />;
   }
+
+  return <CeoPage />;
 }
