@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://start.gotchoo.net
+
+# Sitemaps
+Sitemap: https://start.gotchoo.net/sitemap.xml
