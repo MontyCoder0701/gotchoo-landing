@@ -13,7 +13,7 @@ const notoSansKr = Noto_Sans_KR({
 export const metadata: Metadata = {
   title: "갖추 GotChoo | 횡령 빠르게 잡다.",
   applicationName: "갖추",
-  description: "갖추 랜딩페이지",
+  description: "대표님을 위한 횡령 탐지 솔루션",
 };
 
 export default function RootLayout({
