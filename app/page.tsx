@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import {
@@ -21,8 +22,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-import { Textarea } from "@/components/ui/textarea";
-import Link from "next/link";
+import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 
 function ConsultationDialog({ children }: { children: React.ReactNode }) {
@@ -49,7 +49,7 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
             </DialogDescription>
           </DialogHeader>
 
-          <div className="grid grid-cols-4 gap-4">
+          <div className="flex flex-col gap-2">
             <label htmlFor="phone">연락처</label>
             <Input
               id="phone"
@@ -60,15 +60,31 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
             />
           </div>
 
-          <div className="grid grid-cols-4 gap-4">
-            <label htmlFor="message">내용</label>
-            <Textarea
-              id="message"
-              name="message"
-              className="col-span-3 resize-none h-56"
-              placeholder="상담 내용을 입력해주세요"
-              required
-            />
+          <div className="flex flex-col gap-2">
+            <label htmlFor="concerns">
+              어떤 안내가 필요하신가요? (복수 선택 가능)
+            </label>
+
+            <div className="col-span-3 flex items-center gap-2">
+              <Checkbox id="1" />
+              <label htmlFor="1" className="text-sm text-muted-foreground">
+                GotChoo 도입이 정말 효과적일지 알고 싶어요.
+              </label>
+            </div>
+
+            <div className="col-span-3 flex items-center gap-2">
+              <Checkbox id="2" />
+              <label htmlFor="2" className="text-sm text-muted-foreground">
+                우리 기업에 GotChoo 도입이 적합할지 알고 싶어요.
+              </label>
+            </div>
+
+            <div className="col-span-3 flex items-center gap-2">
+              <Checkbox id="3" />
+              <label htmlFor="3" className="text-sm text-muted-foreground">
+                보안 문제가 없을지 기술적 안내가 필요해요.
+              </label>
+            </div>
           </div>
 
           <DialogFooter>
