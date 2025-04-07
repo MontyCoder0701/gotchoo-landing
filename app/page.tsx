@@ -23,6 +23,15 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { toast } from "sonner";
 
 function ConsultationDialog({ children }: { children: React.ReactNode }) {
@@ -58,6 +67,26 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
               type="tel"
               required
             />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="company-size">기업 규모</label>
+
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="규모를 선택하세요" />
+              </SelectTrigger>
+
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>기업 규모</SelectLabel>
+                  <SelectItem value="1-10">1~10인</SelectItem>
+                  <SelectItem value="11-50">11~50인</SelectItem>
+                  <SelectItem value="51-100">51~100인</SelectItem>
+                  <SelectItem value="100+">100+인</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="flex flex-col gap-2">
