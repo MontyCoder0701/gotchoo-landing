@@ -1,10 +1,10 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import Ceo from "./_pages/Ceo";
 
-export default async function Home() {
-  const cookie = (await cookies()).get("target-variant")?.value;
-  if (cookie === "ceo-friend") {
-    redirect("/ceo-friend");
-  }
-  redirect("/ceo");
+export const metadata = {
+  title: "갖추 | 횡령 빠르게 잡다.",
+  description: "대표님을 위한 횡령 탐지 솔루션입니다.",
+};
+
+export default function Home() {
+  return (<Ceo></Ceo>);
 }
