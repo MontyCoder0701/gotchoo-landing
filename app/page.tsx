@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
+import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { toast } from "sonner";
 
@@ -288,7 +289,7 @@ export default function Home() {
                   </DialogDescription>
                 </DialogHeader>
 
-                <div className="grid grid-cols-4 items-center gap-4">
+                <div className="grid grid-cols-4 gap-4">
                   <label htmlFor="phone">전화번호</label>
                   <Input
                     id="phone"
@@ -297,6 +298,17 @@ export default function Home() {
                     type="tel"
                     required
                   />
+                </div>
+
+                <div className="grid grid-cols-4 gap-4">
+                  <label htmlFor="message">내용</label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    className="col-span-3 resize-none h-56"
+                    placeholder="상담 내용을 입력해주세요"
+                    required
+                  ></Textarea>
                 </div>
 
                 <DialogFooter>
