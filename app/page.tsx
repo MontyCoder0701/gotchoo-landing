@@ -25,9 +25,62 @@ import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { toast } from "sonner";
 
-export default function Home() {
+function ConsultationDialog({ children }: { children: React.ReactNode }) {
   const [ctaOpen, setCtaOpen] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setCtaOpen(false);
+    toast("상담 신청이 완료되었습니다.", {
+      description: "빠른 시일 내 연락 드리겠습니다.😊",
+    });
+  };
+
+  return (
+    <Dialog open={ctaOpen} onOpenChange={setCtaOpen}>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+
+      <DialogContent className="sm:max-w-[425px]">
+        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+          <DialogHeader>
+            <DialogTitle>도입 문의하기</DialogTitle>
+            <DialogDescription>
+              친절한 상담으로 빠르게 안내 드리겠습니다.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="grid grid-cols-4 gap-4">
+            <label htmlFor="phone">연락처</label>
+            <Input
+              id="phone"
+              name="phone"
+              className="col-span-3"
+              type="tel"
+              required
+            />
+          </div>
+
+          <div className="grid grid-cols-4 gap-4">
+            <label htmlFor="message">내용</label>
+            <Textarea
+              id="message"
+              name="message"
+              className="col-span-3 resize-none h-56"
+              placeholder="상담 내용을 입력해주세요"
+              required
+            />
+          </div>
+
+          <DialogFooter>
+            <Button type="submit">문의하기</Button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+export default function Home() {
   const miniFeatures = [
     {
       title: "모든 거래를 한눈에, 실시간 감시",
@@ -96,17 +149,11 @@ export default function Home() {
     },
   ];
 
-  const handleSubmitCta = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setCtaOpen(false);
-    toast("상담 신청이 완료되었습니다.");
-  };
-
   return (
     <div className="flex flex-col justify-center items-center bg-white dark:bg-black text-black dark:text-white">
       {/* Sticky Top Navigation */}
       <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-5xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
           <Link
             href="https://www.gotchoo.net/"
             target="_blank"
@@ -116,14 +163,9 @@ export default function Home() {
           </Link>
 
           <nav className="space-x-4 hidden sm:block">
-            <a
-              href="https://www.gotchoo.net/guide/03_fare_n.htm?smenu=sub2&stitle=subtitle2_3"
-              className="hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              지금 시작하기
-            </a>
+            <ConsultationDialog>
+              <Button>도입 문의</Button>
+            </ConsultationDialog>
           </nav>
         </div>
       </header>
@@ -140,15 +182,11 @@ export default function Home() {
               금융 데이터 분석으로 한눈에 횡령을 잡아내는 똑똑한 솔루션
             </p>
 
-            <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
-              <Link
-                href="https://www.gotchoo.net/guide/03_fare_n.htm?smenu=sub2&stitle=subtitle2_3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                지금 시작하기
-              </Link>
-            </Button>
+            <ConsultationDialog>
+              <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
+                도입 문의
+              </Button>
+            </ConsultationDialog>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 pt-10 text-center">
@@ -225,15 +263,11 @@ export default function Home() {
             으로 수천만 원의 손실을 미리 막을 수 있습니다.
           </p>
 
-          <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
-            <Link
-              href="https://www.gotchoo.net/guide/03_fare_n.htm?smenu=sub2&stitle=subtitle2_3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              지금 시작하기
-            </Link>
-          </Button>
+          <ConsultationDialog>
+            <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
+              도입 문의
+            </Button>
+          </ConsultationDialog>
         </div>
       </section>
 
@@ -266,66 +300,6 @@ export default function Home() {
               를 확인해주세요.
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section id="consult" className="w-full px-6 sm:px-10 py-20">
-        <div className="w-full max-w-3xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-            아직 잘 모르시겠나요?
-          </h2>
-          <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
-            친절한 무료 상담으로 안내 드리겠습니다.
-          </p>
-
-          <Dialog open={ctaOpen} onOpenChange={setCtaOpen}>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium"
-              >
-                무료 상담 신청
-              </Button>
-            </DialogTrigger>
-
-            <DialogContent className="sm:max-w-[425px]">
-              <form onSubmit={handleSubmitCta} className="grid gap-4 py-4">
-                <DialogHeader>
-                  <DialogTitle>무료 상담 신청</DialogTitle>
-                  <DialogDescription>
-                    친절한 상담으로 빠르게 안내 드리겠습니다.
-                  </DialogDescription>
-                </DialogHeader>
-
-                <div className="grid grid-cols-4 gap-4">
-                  <label htmlFor="phone">전화번호</label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    className="col-span-3"
-                    type="tel"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-4 gap-4">
-                  <label htmlFor="message">내용</label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    className="col-span-3 resize-none h-56"
-                    placeholder="상담 내용을 입력해주세요"
-                    required
-                  ></Textarea>
-                </div>
-
-                <DialogFooter>
-                  <Button type="submit">상담 신청</Button>
-                </DialogFooter>
-              </form>
-            </DialogContent>
-          </Dialog>
         </div>
       </section>
     </div>
