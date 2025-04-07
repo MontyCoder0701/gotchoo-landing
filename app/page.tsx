@@ -40,8 +40,8 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setCtaOpen(false);
-    toast("상담 신청이 완료되었습니다.", {
-      description: "빠른 시일 내 연락 드리겠습니다.😊",
+    toast("✉️ 상담 신청이 완료되었습니다.", {
+      description: "빠른 시일 내 연락 드리겠습니다.",
     });
   };
 
@@ -65,6 +65,7 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
               name="phone"
               className="col-span-3"
               type="tel"
+              placeholder="+82"
               required
             />
           </div>
