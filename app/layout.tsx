@@ -23,6 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <head>
+        <meta name="google-site-verification" content="Hy2YbodsIexpKZ98KK04IK_uRxJEnQfpK_n1tu_EQKI" />
+      </head>
+
       <body className={`${notoSansKr.variable} antialiased`}>
         {children}
         <Toaster />
