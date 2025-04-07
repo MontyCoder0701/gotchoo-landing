@@ -126,7 +126,7 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function CeoPage() {
+export default function Ceo() {
   const miniFeatures = [
     {
       title: "모든 거래를 한눈에, 실시간 감시",
@@ -265,9 +265,8 @@ export default function CeoPage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col sm:flex-row ${
-                feature.reverse ? "sm:flex-row-reverse" : ""
-              } items-center gap-10`}
+              className={`flex flex-col sm:flex-row ${feature.reverse ? "sm:flex-row-reverse" : ""
+                } items-center gap-10`}
             >
               <div className="sm:w-1/2 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
