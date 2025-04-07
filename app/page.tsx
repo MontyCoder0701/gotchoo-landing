@@ -279,25 +279,29 @@ export default function Home() {
             으로 수천만 원의 손실을 미리 막을 수 있습니다.
           </p>
 
-          <div className="flex gap-4 justify-center">
-            <ConsultationDialog>
-              <Button className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium">
-                도입 문의
-              </Button>
-            </ConsultationDialog>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
+            <div className="w-full sm:w-fit">
+              <ConsultationDialog>
+                <Button className="w-full sm:w-fit p-6 max-w-3xl text-xl sm:text-2xl font-medium">
+                  도입 문의
+                </Button>
+              </ConsultationDialog>
+            </div>
 
-            <Button
-              variant="outline"
-              className="p-6 sm:w-fit w-full max-w-3xl text-xl sm:text-2xl font-medium"
-            >
-              <Link
-                href="https://www.gotchoo.net/aboutus/02_function.htm?smenu=sub1&stitle=subtitle1_2"
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="w-full sm:w-fit">
+              <Button
+                variant="outline"
+                className="w-full sm:w-fit p-6 max-w-3xl text-xl sm:text-2xl font-medium"
               >
-                서비스 소개
-              </Link>
-            </Button>
+                <Link
+                  href="https://www.gotchoo.net/aboutus/02_function.htm?smenu=sub1&stitle=subtitle1_2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  서비스 소개
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
