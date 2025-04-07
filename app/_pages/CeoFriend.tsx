@@ -126,7 +126,7 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function CeoPage() {
+export default function CeoFriend() {
   const miniFeatures = [
     {
       title: "모든 거래를 한눈에, 실시간 감시",
@@ -221,8 +221,8 @@ export default function CeoPage() {
         <div className="max-w-5xl w-full text-center space-y-12">
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl font-bold pt-5">
-              방심하면 언제든 <br />
-              회사 자금이 세어나갑니다.
+              횡령은 누구에게나 <br />
+              일어날 수 있습니다.
             </h1>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
               금융 데이터 분석으로 한눈에 횡령을 잡아내는 똑똑한 솔루션
@@ -294,7 +294,7 @@ export default function CeoPage() {
       <section id="consult" className="w-full px-6 sm:px-10 py-20">
         <div className="w-full max-w-3xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-            방심하면 언제든, 회사 자금이 세어나갑니다.
+            횡령은 누구에게나 일어날 수 있습니다.
           </h2>
           <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
             월{" "}
