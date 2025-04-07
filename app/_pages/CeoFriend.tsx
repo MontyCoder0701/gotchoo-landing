@@ -199,7 +199,6 @@ export default function CeoPage() {
     <div className="flex flex-col justify-center items-center bg-white dark:bg-black text-black dark:text-white">
       {/* Sticky Top Navigation */}
       <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
-        <title>갖추 GotChoo | 횡령을 빠르게 잡는 솔루션</title>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
           <Link
             href="https://www.gotchoo.net/"
@@ -223,7 +222,7 @@ export default function CeoPage() {
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl font-bold pt-5">
               횡령과 배임, <br />
-              다른 회사에만 벌어지는게 아닙니다.
+              다른 회사에만 벌어지는 일이 아닙니다.
             </h1>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
               금융 데이터 분석으로 한눈에 횡령을 잡아내는 똑똑한 솔루션
