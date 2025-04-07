@@ -199,6 +199,7 @@ export default function CeoPage() {
     <div className="flex flex-col justify-center items-center bg-white dark:bg-black text-black dark:text-white">
       {/* Sticky Top Navigation */}
       <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+        <title>갖추 GotChoo | 횡령은 한순간에</title>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
           <Link
             href="https://www.gotchoo.net/"
