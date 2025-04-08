@@ -24,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <meta name="google-site-verification" content="Hy2YbodsIexpKZ98KK04IK_uRxJEnQfpK_n1tu_EQKI" />
+        <meta
+          name="google-site-verification"
+          content="mvblGC4CdrOJs35LaNBiYUPHI58Jx88RinyTkZZnmZQ"
+        />{" "}
       </head>
 
       <body className={`${notoSansKr.variable} antialiased`}>
