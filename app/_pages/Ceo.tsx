@@ -163,7 +163,7 @@ export default function Ceo() {
       title: "의심 거래를 골라내는 강력한 알고리즘",
       description:
         "실제 사례를 기반으로 전문가들이 연구한 패턴과 알고리즘을 결합하여 의심 거래를 선별합니다.",
-      image: "/alarm-list.png",
+      image: "/alarm-one.png",
       reverse: true,
     },
     {
