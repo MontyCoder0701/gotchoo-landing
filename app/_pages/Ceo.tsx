@@ -132,21 +132,21 @@ export default function Ceo() {
       title: "모든 거래를 한눈에, 실시간 감시",
       description:
         "여러 기관의 데이터를 통합 분석해 사각지대 없는 실시간 감시를 제공합니다.",
-      image: "https://placehold.co/24/png",
+      image: "/zoom.png",
       reverse: false,
     },
     {
       title: "의심 거래를 골라내는 강력한 알고리즘",
       description:
         "실제 사례를 기반으로 전문가들이 연구한 패턴과 알고리즘을 결합하여 의심 거래를 선별합니다.",
-      image: "https://placehold.co/24/png",
+      image: "/shield.png",
       reverse: true,
     },
     {
       title: "언제 어디서나, 바로 알림",
       description:
         "의심 거래가 발생하면 실시간 알림으로 빠르게 대응할 수 있습니다.",
-      image: "https://placehold.co/24/png",
+      image: "/chat.png",
       reverse: false,
     },
   ];
@@ -156,21 +156,21 @@ export default function Ceo() {
       title: "모든 거래를 한눈에, 실시간 감시",
       description:
         "은행, 카드사, 국세청 등 다양한 기관의 금융 거래 내역을 통합 분석하여 부정행위 가능성을 탐지합니다.",
-      image: "https://placehold.co/500/png",
+      image: "/account-list.png",
       reverse: false,
     },
     {
       title: "의심 거래를 골라내는 강력한 알고리즘",
       description:
         "실제 사례를 기반으로 전문가들이 연구한 패턴과 알고리즘을 결합하여 의심 거래를 선별합니다.",
-      image: "https://placehold.co/500/png",
+      image: "/alarm-list.png",
       reverse: true,
     },
     {
       title: "언제 어디서나, 바로 알림",
       description:
         "의심 거래가 발생하면 실시간 알림으로 빠르게 대응할 수 있습니다. 기업 대표나 담당자에게 카카오톡 알림 메시지와 이메일로 즉시 통보됩니다.",
-      image: "https://placehold.co/500/png",
+      image: "/kakao-alarm.png",
       reverse: false,
     },
   ];
@@ -241,8 +241,8 @@ export default function Ceo() {
                 <Image
                   src={e.image}
                   alt=""
-                  width={24}
-                  height={24}
+                  width={70}
+                  height={70}
                   className="mb-2 dark:invert"
                 />
                 <h3 className="text-lg font-semibold mb-1">{e.title}</h3>
@@ -265,8 +265,9 @@ export default function Ceo() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col sm:flex-row ${feature.reverse ? "sm:flex-row-reverse" : ""
-                } items-center gap-10`}
+              className={`flex flex-col sm:flex-row ${
+                feature.reverse ? "sm:flex-row-reverse" : ""
+              } items-center gap-10`}
             >
               <div className="sm:w-1/2 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
@@ -279,8 +280,8 @@ export default function Ceo() {
                 <Image
                   src={feature.image}
                   alt={feature.title}
-                  width={300}
-                  height={300}
+                  width={700}
+                  height={500}
                   className="rounded-lg shadow-lg"
                 />
               </div>
