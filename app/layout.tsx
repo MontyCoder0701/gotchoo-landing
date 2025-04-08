@@ -27,7 +27,7 @@ export default function RootLayout({
         <meta
           name="google-site-verification"
           content="mvblGC4CdrOJs35LaNBiYUPHI58Jx88RinyTkZZnmZQ"
-        />{" "}
+        />
       </head>
 
       <body className={`${notoSansKr.variable} antialiased`}>
