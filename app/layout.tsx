@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
 
       <body className={`${notoSansKr.variable} antialiased`}>
         {children}
+        <GoogleAnalytics gaId="G-LZH6VT8BX0" />
         <Toaster />
       </body>
     </html>
