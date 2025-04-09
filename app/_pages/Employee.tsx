@@ -241,8 +241,8 @@ export default function Employee() {
                 <Image
                   src={e.image}
                   alt=""
-                  width={24}
-                  height={24}
+                  width={70}
+                  height={70}
                   className="mb-2 dark:invert"
                 />
                 <h3 className="text-lg font-semibold mb-1">{e.title}</h3>
@@ -280,8 +280,8 @@ export default function Employee() {
                 <Image
                   src={feature.image}
                   alt={feature.title}
-                  width={300}
-                  height={300}
+                  width={700}
+                  height={700}
                   className="rounded-lg shadow-lg"
                 />
               </div>

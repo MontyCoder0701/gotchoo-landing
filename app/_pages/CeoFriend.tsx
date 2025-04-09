@@ -241,8 +241,8 @@ export default function CeoFriend() {
                 <Image
                   src={e.image}
                   alt=""
-                  width={24}
-                  height={24}
+                  width={70}
+                  height={70}
                   className="mb-2 dark:invert"
                 />
                 <h3 className="text-lg font-semibold mb-1">{e.title}</h3>
@@ -280,8 +280,8 @@ export default function CeoFriend() {
                 <Image
                   src={feature.image}
                   alt={feature.title}
-                  width={300}
-                  height={300}
+                  width={700}
+                  height={700}
                   className="rounded-lg shadow-lg"
                 />
               </div>
@@ -294,7 +294,8 @@ export default function CeoFriend() {
       <section id="consult" className="w-full px-6 sm:px-10 py-20">
         <div className="w-full max-w-3xl bg-gray-100 dark:bg-gray-900 rounded-xl p-8 text-center mx-auto">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-            횡령과 배임, 남의 일이 아닙니다.
+            횡령과 배임, <br />
+            남의 일이 아닙니다.
           </h2>
           <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-6">
             월{" "}
