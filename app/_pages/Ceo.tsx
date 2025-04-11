@@ -36,14 +36,38 @@ import { toast } from "sonner";
 
 function ConsultationDialog({ children }: { children: React.ReactNode }) {
   const [ctaOpen, setCtaOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setLoading(true);
+
     const formData = new FormData(e.currentTarget);
     const phone = String(formData.get("phone") || "").trim();
+    const email = String(formData.get("email") || "").trim();
     const companySize = String(formData.get("company-size") || "").trim();
     const concerns = formData.getAll("concerns").map(String);
+
+    if (!phone || !email) {
+      setLoading(false);
+      toast.error("연락처가 없습니다.", {
+        description: "전화번호나 이메일을 입력해주세요.",
+      });
+      return;
+    }
+
+    if (!companySize) {
+      setLoading(false);
+      toast.error("기업 규모를 선택해주세요.");
+      return;
+    }
+
+    if (concerns.length == 0) {
+      setLoading(false);
+      toast.error("받으실 안내 종류를 선택해주세요.");
+      return;
+    }
 
     try {
       const response = await fetch("/api/send-email", {
@@ -51,7 +75,8 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           html: `
-          <p>strong>전화번호: ${phone}strong></p>
+          <p><strong>전화번호:</strong> ${phone}</p>
+          <p><strong>이메일:</strong> ${email}</p>
           <p><strong>기업 규모:</strong> ${companySize}</p>
           <p><strong>관심 사항:</strong><br>${concerns
             .map((c) => `- ${c}`)
@@ -75,6 +100,8 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
       toast.error("오류 발생", {
         description: `${error}`,
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -83,84 +110,97 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
 
       <DialogContent className="sm:max-w-[425px]">
-        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
-          <DialogHeader>
-            <DialogTitle>도입 문의하기</DialogTitle>
-            <DialogDescription>
-              친절한 상담으로 빠르게 안내 드리겠습니다.
-            </DialogDescription>
-          </DialogHeader>
+        <DialogHeader>
+          <DialogTitle>도입 문의하기</DialogTitle>
+          <DialogDescription>
+            친절한 상담으로 빠르게 안내 드리겠습니다.
+          </DialogDescription>
+        </DialogHeader>
 
-          <div className="flex flex-col gap-2">
-            <label htmlFor="phone">연락처</label>
-            <Input
-              id="phone"
-              name="phone"
-              className="col-span-3"
-              type="tel"
-              placeholder="+82"
-              required
-            />
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label htmlFor="company-size">기업 규모</label>
-
-            <Select name="company-size">
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="규모를 선택하세요" />
-              </SelectTrigger>
-
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>기업 규모</SelectLabel>
-                  <SelectItem value="1-10">1~10인</SelectItem>
-                  <SelectItem value="11-50">11~50인</SelectItem>
-                  <SelectItem value="51-100">51~100인</SelectItem>
-                  <SelectItem value="100+">100+인</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label>어떤 안내가 필요하신가요? (복수 선택 가능)</label>
-            <div className="col-span-3 flex items-center gap-2">
-              <Checkbox
-                id="c1"
-                name="concerns"
-                value="어떻게 횡령을 잡는지, 데모를 무료로 보고 싶어요."
+        <div className="max-h-[60vh] overflow-y-auto px-2">
+          <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="phone">연락처</label>
+              <Input
+                id="phone"
+                name="phone"
+                className="col-span-3"
+                type="tel"
+                placeholder="+82"
               />
-              <label htmlFor="c1" className="text-sm text-muted-foreground">
-                어떻게 횡령을 잡는지, 데모를 무료로 보고 싶어요.
-              </label>
             </div>
-            <div className="col-span-3 flex items-center gap-2">
-              <Checkbox
-                id="c2"
-                name="concerns"
-                value="도입 비용 견적을 알아보고 싶어요."
-              />
-              <label htmlFor="c2" className="text-sm text-muted-foreground">
-                도입 비용 견적을 알아보고 싶어요.
-              </label>
-            </div>
-            <div className="col-span-3 flex items-center gap-2">
-              <Checkbox
-                id="c3"
-                name="concerns"
-                value="보안 문제가 없을지 기술적 안내가 필요해요."
-              />
-              <label htmlFor="c3" className="text-sm text-muted-foreground">
-                보안 문제가 없을지 기술적 안내가 필요해요.
-              </label>
-            </div>
-          </div>
 
-          <DialogFooter>
-            <Button type="submit">문의하기</Button>
-          </DialogFooter>
-        </form>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email">이메일</label>
+              <Input
+                id="email"
+                name="email"
+                className="col-span-3"
+                type="email"
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label htmlFor="company-size">기업 규모</label>
+
+              <Select name="company-size">
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="규모를 선택하세요" />
+                </SelectTrigger>
+
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>기업 규모</SelectLabel>
+                    <SelectItem value="1-10">1~10인</SelectItem>
+                    <SelectItem value="11-50">11~50인</SelectItem>
+                    <SelectItem value="51-100">51~100인</SelectItem>
+                    <SelectItem value="100+">100+인</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label>어떤 안내가 필요하신가요? (복수 선택 가능)</label>
+              <div className="col-span-3 flex items-center gap-2">
+                <Checkbox
+                  id="c1"
+                  name="concerns"
+                  value="어떻게 횡령을 잡는지, 데모를 무료로 보고 싶어요."
+                />
+                <label htmlFor="c1" className="text-sm text-muted-foreground">
+                  어떻게 횡령을 잡는지, 데모를 무료로 보고 싶어요.
+                </label>
+              </div>
+              <div className="col-span-3 flex items-center gap-2">
+                <Checkbox
+                  id="c2"
+                  name="concerns"
+                  value="도입 비용 견적을 알아보고 싶어요."
+                />
+                <label htmlFor="c2" className="text-sm text-muted-foreground">
+                  도입 비용 견적을 알아보고 싶어요.
+                </label>
+              </div>
+              <div className="col-span-3 flex items-center gap-2">
+                <Checkbox
+                  id="c3"
+                  name="concerns"
+                  value="보안 문제가 없을지 기술적 안내가 필요해요."
+                />
+                <label htmlFor="c3" className="text-sm text-muted-foreground">
+                  보안 문제가 없을지 기술적 안내가 필요해요.
+                </label>
+              </div>
+            </div>
+
+            <DialogFooter>
+              <Button type="submit" disabled={loading}>
+                문의하기
+              </Button>
+            </DialogFooter>
+          </form>
+        </div>
       </DialogContent>
     </Dialog>
   );
