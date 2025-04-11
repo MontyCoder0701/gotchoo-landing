@@ -37,12 +37,45 @@ import { toast } from "sonner";
 function ConsultationDialog({ children }: { children: React.ReactNode }) {
   const [ctaOpen, setCtaOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setCtaOpen(false);
-    toast("✉️ 상담 신청이 완료되었습니다.", {
-      description: "빠른 시일 내 연락 드리겠습니다.",
-    });
+
+    const formData = new FormData(e.currentTarget);
+    const phone = String(formData.get("phone") || "").trim();
+    const companySize = String(formData.get("company-size") || "").trim();
+    const concerns = formData.getAll("concerns").map(String);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          html: `
+          <p>strong>전화번호: ${phone}strong></p>
+          <p><strong>기업 규모:</strong> ${companySize}</p>
+          <p><strong>관심 사항:</strong><br>${concerns
+            .map((c) => `- ${c}`)
+            .join("<br>")}</p>
+        `,
+        }),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        setCtaOpen(false);
+        toast.info("상담 신청이 완료되었습니다.", {
+          description: "빠른 시일 내 연락 드리겠습니다.",
+        });
+      } else {
+        toast.error("오류 발생", {
+          description: `${result.error}`,
+        });
+      }
+    } catch (error) {
+      toast.error("오류 발생", {
+        description: `${error}`,
+      });
+    }
   };
 
   return (
@@ -73,7 +106,7 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
           <div className="flex flex-col gap-2">
             <label htmlFor="company-size">기업 규모</label>
 
-            <Select>
+            <Select name="company-size">
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="규모를 선택하세요" />
               </SelectTrigger>
@@ -91,27 +124,34 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="concerns">
-              어떤 안내가 필요하신가요? (복수 선택 가능)
-            </label>
-
+            <label>어떤 안내가 필요하신가요? (복수 선택 가능)</label>
             <div className="col-span-3 flex items-center gap-2">
-              <Checkbox id="1" />
-              <label htmlFor="1" className="text-sm text-muted-foreground">
+              <Checkbox
+                id="c1"
+                name="concerns"
+                value="어떻게 횡령을 잡는지, 데모를 무료로 보고 싶어요."
+              />
+              <label htmlFor="c1" className="text-sm text-muted-foreground">
                 어떻게 횡령을 잡는지, 데모를 무료로 보고 싶어요.
               </label>
             </div>
-
             <div className="col-span-3 flex items-center gap-2">
-              <Checkbox id="2" />
-              <label htmlFor="2" className="text-sm text-muted-foreground">
+              <Checkbox
+                id="c2"
+                name="concerns"
+                value="도입 비용 견적을 알아보고 싶어요."
+              />
+              <label htmlFor="c2" className="text-sm text-muted-foreground">
                 도입 비용 견적을 알아보고 싶어요.
               </label>
             </div>
-
             <div className="col-span-3 flex items-center gap-2">
-              <Checkbox id="3" />
-              <label htmlFor="3" className="text-sm text-muted-foreground">
+              <Checkbox
+                id="c3"
+                name="concerns"
+                value="보안 문제가 없을지 기술적 안내가 필요해요."
+              />
+              <label htmlFor="c3" className="text-sm text-muted-foreground">
                 보안 문제가 없을지 기술적 안내가 필요해요.
               </label>
             </div>
