@@ -49,10 +49,10 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
     const companySize = String(formData.get("company-size") || "").trim();
     const concerns = formData.getAll("concerns").map(String);
 
-    if (!phone || !email) {
+    if (!phone && !email) {
       setLoading(false);
       toast.error("연락처가 없습니다.", {
-        description: "전화번호나 이메일을 입력해주세요.",
+        description: "전화번호 또는 이메일을 입력해주세요.",
       });
       return;
     }
