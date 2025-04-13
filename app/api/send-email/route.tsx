@@ -4,7 +4,7 @@ export async function POST(req: Request) {
   try {
     const { html } = await req.json();
 
-    const backendResponse = await fetch("https://gotchoo-landing.deno.dev/", {
+    const backendResponse = await fetch("https://resend-email-sender.deno.dev/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ html }),

@@ -74,13 +74,14 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          subject: "[상담 신청] 갖추 랜딩페이지",
           html: `
           <p><strong>전화번호:</strong> ${phone}</p>
           <p><strong>이메일:</strong> ${email}</p>
           <p><strong>기업 규모:</strong> ${companySize}</p>
           <p><strong>관심 사항:</strong><br>${concerns
-            .map((c) => `- ${c}`)
-            .join("<br>")}</p>
+              .map((c) => `- ${c}`)
+              .join("<br>")}</p>
         `,
         }),
       });
@@ -345,9 +346,8 @@ export default function Ceo() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col sm:flex-row ${
-                feature.reverse ? "sm:flex-row-reverse" : ""
-              } items-center gap-10`}
+              className={`flex flex-col sm:flex-row ${feature.reverse ? "sm:flex-row-reverse" : ""
+                } items-center gap-10`}
             >
               <div className="sm:w-1/2 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
