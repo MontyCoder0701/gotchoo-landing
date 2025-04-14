@@ -31,7 +31,7 @@ export default function RootLayout({
         />
         <meta
           name="naver-site-verification"
-          content="7e7e702f62d8fda3d2cc6480cb535bd52bc1a7e1"
+          content="f0c78ddfab3fb83178657cdbcf9b241a18ff4f5c"
         />
       </head>
 
