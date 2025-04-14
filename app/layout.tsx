@@ -38,7 +38,7 @@ export default function RootLayout({
       <body className={`${notoSansKr.variable} antialiased`}>
         {children}
         <GoogleTagManager gtmId="GTM-PK458S8F" />
-        <GoogleAnalytics gaId="G-2F3E5YW4FL" />
+        <GoogleAnalytics gaId="G-4P6LDHBMWX" />
         <Toaster />
       </body>
     </html>
