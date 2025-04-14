@@ -29,6 +29,10 @@ export default function RootLayout({
           name="google-site-verification"
           content="mvblGC4CdrOJs35LaNBiYUPHI58Jx88RinyTkZZnmZQ"
         />
+        <meta
+          name="naver-site-verification"
+          content="7e7e702f62d8fda3d2cc6480cb535bd52bc1a7e1"
+        />
       </head>
 
       <body className={`${notoSansKr.variable} antialiased`}>
