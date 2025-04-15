@@ -74,7 +74,7 @@ function ConsultationDialog({ children }: { children: React.ReactNode }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          subject: "[상담 신청] 갖추 랜딩페이지",
+          subject: "[상담 신청] GOTCHOO 랜딩페이지",
           html: `
           <p><strong>전화번호:</strong> ${phone}</p>
           <p><strong>이메일:</strong> ${email}</p>
@@ -261,7 +261,7 @@ export default function CeoFriend() {
       question:
         "GotChoo가 데이터를 수집하기 위해 활용하는 기술은 무엇인지, 법적 문제는 없는지 궁금합니다.",
       answer:
-        "GotChoo는 기업의 공동인증서를 이용, 은행·카드·국세청·4대보험 사이트에 있는 기업 거래 Data를 Scraping 방식으로 수집하고 있습니다. 이를 위해 저희 민이앤아이는 신뢰성 있는 Data Scraping 기술을 보유한 알디스데이터와 제휴하여 GotChoo갖추를 개발하였습니다. 아울러 Data Scraping은 여러 시중은행의 인터넷뱅킹에서도 활용하고 있을 정도로, 법적·기술적으로 검증된 기술입니다.",
+        "GotChoo는 기업의 공동인증서를 이용, 은행·카드·국세청·4대보험 사이트에 있는 기업 거래 Data를 Scraping 방식으로 수집하고 있습니다. 이를 위해 저희 민이앤아이는 신뢰성 있는 Data Scraping 기술을 보유한 알디스데이터와 제휴하여 GOTCHOO를 개발하였습니다. 아울러 Data Scraping은 여러 시중은행의 인터넷뱅킹에서도 활용하고 있을 정도로, 법적·기술적으로 검증된 기술입니다.",
     },
     {
       question:
@@ -272,7 +272,7 @@ export default function CeoFriend() {
     {
       question: "GotChoo를 이용하려면 어떻게 해야 하나요?",
       answer:
-        "홈페이지에서 회원가입 및 설치플랜을 선택하신 후 GotChoo 설치파일을 다운로드 받아 실행시키면 PC에 설치할 수 있습니다. 설치 후 바탕화면에 생긴 GotChoo 아이콘을 클릭하시면 프로그램이 실행됩니다. 실행후 안내에 따라 기업/기관위치, 급여일, 은행계좌, 신용카드, 홈택스, 4대사회보험, 직원정보를 등록하고, 알람/리포트 수신정보와 탐지주기를 설정하면 미리 설정된 주기에 따라 자동으로 거래내역을 수집 분석하여 횡령 등 부정행위 의심거래를 탐지하여 드립니다. 최초 사용자 등록후 3개월동안 무료로 이용하실 수 있습니다.",
+        "홈페이지에서 회원가입 및 설치플랜을 선택하신 후 GOTCHOO 설치파일을 다운로드 받아 실행시키면 PC에 설치할 수 있습니다. 설치 후 바탕화면에 생긴 GOTCHOO 아이콘을 클릭하시면 프로그램이 실행됩니다. 실행후 안내에 따라 기업/기관위치, 급여일, 은행계좌, 신용카드, 홈택스, 4대사회보험, 직원정보를 등록하고, 알람/리포트 수신정보와 탐지주기를 설정하면 미리 설정된 주기에 따라 자동으로 거래내역을 수집 분석하여 횡령 등 부정행위 의심거래를 탐지하여 드립니다. 최초 사용자 등록후 3개월동안 무료로 이용하실 수 있습니다.",
     },
   ];
 
