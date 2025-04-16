@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 import {
@@ -280,13 +279,13 @@ export default function Employee() {
       {/* Sticky Top Navigation */}
       <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
-          <Link
+          <a
             href="https://www.gotchoo.net/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image src="/logo.png" alt="로고" width={143} height={32} />
-          </Link>
+          </a>
 
           <nav className="space-x-4 hidden sm:block">
             <ConsultationDialog>
@@ -403,13 +402,13 @@ export default function Employee() {
                 variant="outline"
                 className="w-full sm:w-fit p-6 max-w-3xl text-xl sm:text-2xl font-medium"
               >
-                <Link
+                <a
                   href="https://www.gotchoo.net/aboutus/02_function.htm?smenu=sub1&stitle=subtitle1_2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   서비스 소개
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
