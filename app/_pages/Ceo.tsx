@@ -442,6 +442,21 @@ export default function Ceo() {
           </div>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="w-full bg-gray-100 dark:bg-gray-900 border-St border-gray-300 dark:border-gray-700 px-6 sm:px-10 py-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-center sm:text-left">
+            <div className="font-semibold">(주)민이앤아이</div>
+            <div>서울특별시 강남구 테헤란로 126 대공빌딩 4층 (06234)</div>
+          </div>
+
+          <div className="flex gap-4">
+            <div>TEL : 02-569-6020 </div>
+            <div>FAX : 02-569-6088</div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
