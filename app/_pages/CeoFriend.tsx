@@ -448,7 +448,14 @@ export default function CeoFriend() {
       <footer className="w-full bg-gray-100 dark:bg-gray-900 border-St border-gray-300 dark:border-gray-700 px-6 sm:px-10 py-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
           <div className="text-center sm:text-left">
-            <div className="font-semibold">(주)민이앤아이</div>
+            <a
+              className="font-semibold"
+              href="https://www.mineni.net/min-eni"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              (주)민이앤아이
+            </a>
             <div>서울특별시 강남구 테헤란로 126 대공빌딩 4층 (06234)</div>
           </div>
 
